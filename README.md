@@ -21,7 +21,7 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
   - ![obs websocket server settings](https://github.com/b3nelly2/stream/blob/main/assets/obs-websocket-server-settings.png?raw=true)
   - Don't forget to set your _Server Password_
 
-2. `git clone https://github.com/b3nelly2/stream.git`
+2. `git clone https://github.com/b3nelly2/obs-stream-automation.git`
 3. `cd ./stream`
 4. `npm install`
 5. Create .env file and add your OBS WebSocket Server Settings:
