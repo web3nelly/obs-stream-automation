@@ -38,4 +38,5 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
   ```
 
 6. `npm start` (OBS must me started to work.)
-7. That's it, for now 😉
+7. You can change the duration to switch scenes on this line: https://github.com/b3nelly2/obs-stream-automation/blob/5b7261dd928b7faf3a204a2bc4c206d5eba4ffe3/changeScene.js#L5
+8. That's it, for now 😉
