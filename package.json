@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+    "start": "node changeScene.js"
+  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "obs-websocket-js": "^5.0.2"
