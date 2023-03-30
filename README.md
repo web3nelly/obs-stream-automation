@@ -1,6 +1,6 @@
 # OBS Stream Automation
 
-Using [Node.js](https://nodejs.org/) and [OBS-websocket](https://github.com/obsproject/obs-websocket) to automate our live stream.
+Using [Node.js](https://nodejs.org/) and [obs-websocket](https://github.com/obsproject/obs-websocket) to automate our live stream.
 See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.tv/breaking3Dreality)
 
 **More automates to come!**
@@ -8,6 +8,7 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
 ## Dependancies
 
 - [OBS](https://obsproject.com/)
+- [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
 - [obs-websocket-js](https://github.com/obs-websocket-community-projects/obs-websocket-js) for switching scenes in OBS.
 - [dotenv](https://github.com/motdotla/dotenv) for setting private evniermentt varibles.
