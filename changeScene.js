@@ -2,7 +2,7 @@ import * as dotenv from "dotenv"; // https://github.com/motdotla/dotenv#how-do-i
 import OBSWebSocket from "obs-websocket-js"; // https://github.com/obs-websocket-community-projects/obs-websocket-js
 dotenv.config();
 const obs = new OBSWebSocket();
-const intervalInSecs = 90;
+const intervalInSecs = process.env.OBS_SCENE_INT_SECS;
 let currentSceneIndex;
 
 obs.on("ConnectionOpened", () => {
