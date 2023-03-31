@@ -31,11 +31,13 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
   New-Item .env -ItemType File
   >> "OBS_WS='ws://localhost:4455'" | Out-File -FilePath .env -Encoding utf8 -Append
   >> "OBS_WS_PASS='yourPassword'" | Out-File -FilePath .env -Encoding utf8 -Append
+  >> "OBS_SCENE_INT_SECS=90" | Out-File -FilePath .env -Encoding utf8 -Append
   ```
 - macOS & Linux: `touch .env`
   ```
   echo "OBS_WS='ws://localhost:4455'" >> .env
   echo "OBS_WS_PASS='yourPassword'" >> .env
+  echo "OBS_SCENE_INT_SECS=90" >> .env
   ```
 
 6. `npm start` (OBS must me started to work.)
