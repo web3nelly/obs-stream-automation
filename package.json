@@ -1,6 +1,6 @@
 {
   "name": "obs-stream-automation",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "description": "With just a few lines of code and the `@b3nelly/change-obs-scene` Node.js npm package, automate changing your OBS scenes.",
   "author": "web3nelly",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "start": "node changeScene.js"
   },
   "dependencies": {
-    "@b3nelly/change-obs-scene": "^0.1.1",
+    "@b3nelly/change-obs-scene": "^1.3.0",
     "dotenv": "^16.0.3"
   }
 }
