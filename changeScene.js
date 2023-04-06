@@ -1,60 +1,15 @@
 import * as dotenv from "dotenv"; // https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
-import OBSWebSocket from "obs-websocket-js"; // https://github.com/obs-websocket-community-projects/obs-websocket-js
-dotenv.config();
-const obs = new OBSWebSocket();
-const intervalInSecs = process.env.OBS_SCENE_INT_SECS;
-let currentSceneIndex;
+import obsSwitchScenes from "@b3nelly/change-obs-scene"; // https://github.com/web3nelly/change-obs-scene
+https: dotenv.config();
 
-obs.on("ConnectionOpened", () => {
-  console.log("Connection Opened");
-});
+const obsSkipScenes = ["Scene 1"];
+const intervalInSeconds = process.env.OBS_SCENE_INT_SECS ?? 45;
+const obsWebSocketServerURL = process.env.OBS_WS ?? "ws://localhost:4455";
+const obsWebSocketServerPassword = process.env.OBS_WS_PASS ?? undefined;
 
-obs.on("Identified", () => {
-  console.log("Identified, good to go!");
-
-  obs
-    .call("GetSceneList")
-    .then((scenesData) => {
-      console.log("Scenes:", scenesData);
-      switchScene(scenesData);
-    })
-    .catch((error) => {
-      console.error("Error on GetSceneList call:", error);
-    });
-});
-
-obs.connect(process.env.OBS_WS, process.env.OBS_WS_PASS).then(
-  (info) => {
-    console.log("Connected and identified", info);
-  },
-  () => {
-    console.error("Error Connecting");
-  }
+obsSwitchScenes(
+  intervalInSeconds,
+  obsWebSocketServerURL,
+  obsWebSocketServerPassword,
+  obsSkipScenes
 );
-
-const switchScene = (scenesData) => {
-  setInterval(() => {
-    currentSceneIndex = getNextSceneIndex(scenesData, currentSceneIndex);
-    const nextScene = scenesData.scenes[currentSceneIndex];
-    console.log("nextSceneIndex: ", currentSceneIndex);
-    console.log("nextScene: ", nextScene.sceneName);
-    obs
-      .call("SetCurrentProgramScene", { sceneName: nextScene.sceneName })
-      .then(() => {
-        console.log("Switched to scene:", nextScene.sceneName);
-      })
-      .catch((error) => {
-        console.error("Error switching scenes:", error);
-      });
-  }, intervalInSecs * 1000);
-};
-
-const getNextSceneIndex = (scenesData, currentIndex) => {
-  currentIndex =
-    currentIndex ??
-    scenesData.scenes.findIndex(
-      (scene) => scene.sceneName === scenesData.currentProgramSceneName
-    );
-  currentIndex = ++currentIndex >= scenesData.scenes.length ? 0 : currentIndex;
-  return currentIndex;
-};

@@ -10,8 +10,7 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
 - [OBS](https://obsproject.com/)
 - [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
-- [obs-websocket-js](https://github.com/obs-websocket-community-projects/obs-websocket-js) for switching scenes in OBS.
-- [dotenv](https://github.com/motdotla/dotenv) for setting private evniermentt varibles.
+- [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene) for dynamically switching scenes in OBS.
 
 ## Usage
 
@@ -22,7 +21,7 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
   - Don't forget to set your _Server Password_
 
 2. `git clone https://github.com/b3nelly2/obs-stream-automation.git`
-3. `cd ./stream`
+3. `cd ./obs-stream-automation`
 4. `npm install`
 5. Create .env file and add your OBS WebSocket Server Settings:
 

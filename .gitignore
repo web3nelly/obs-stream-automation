@@ -1,9 +1,21 @@
-# ignore ALL .log files
-*.log
-
-# ignore ALL files in ANY directory named temp
-temp/
-
-.vscode/
+# Ignore development-related files and folders
 node_modules/
+test/
+coverage/
+rollup.config.js
+package-lock.json
 *.env
+
+# Ignore OS-related files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Ignore logs, cache, and temporary files
+*.log
+.cache/
+.tmp/
+
+# Ignore editor/IDE specific files
+.vscode/
+.idea/
