@@ -11,6 +11,7 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
 - [OBS](https://obsproject.com/)
 - [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
+- [dotenv](https://www.npmjs.com/package/dotenv)
 - [@b3nelly/change-obs-scene](https://www.npmjs.com/package/@b3nelly/change-obs-scene?activeTab=readme)
 
 ## Usage
@@ -39,11 +40,18 @@ See Automations in action @ [breaking3Dreality on Twitch.tv](https://www.twitch.
   echo "OBS_WS_PASS='yourPassword'" >> .env
   echo "OBS_SCENE_INT_SECS=90" >> .env
   ```
-- Or you can just edit the `changeScene.js`, manually update your:
+- Or you can just edit the `changeScene.js`, manuallying update:
   - `obsSkipScenes`: Default is an empty array
   - `intervalInSeconds`: Default is 45s
   - `obsWebSocketServerURL`: Default is ws://localhost:4455
   - `obsWebSocketServerPassword`: Default is undefined
+  - You can also comment out `dotevn` if you aren't using an `.env` file
+    - Lines 1 and 3:
+    - https://github.com/web3nelly/obs-stream-automation/blob/936e5204bd5f66eca6af63c393f8b42fb8ff0b0c/changeScene.js#L1-L8
 
 6. `npm start` (OBS must me started to work)
 7. That's it, for now 😉
+
+## `@b3nelly/change-obs-scene` In Action
+
+![Working change obs scene example image](https://github.com/web3nelly/obs-stream-automation/blob/main/assets/change-obs-scene.png?raw=true)
